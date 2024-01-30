@@ -113,6 +113,8 @@ class finalgrade extends grade_attribute_format implements unique_value, be_disa
      * @return element
      */
     public function determine_format(): element {
+        global $CFG;
+
         if ($this->grade->grade_item->load_scale()) {
             $scale = $this->grade->grade_item->load_scale();
 

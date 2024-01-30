@@ -1164,8 +1164,10 @@ class grade_report_grader extends grade_report {
                                 if (isset($item->grademin)) {
                                     $inputparams['min'] = $item->grademin;
                                 }
-                                if (isset($item->grademax)) {
-                                    $inputparams['max'] = $item->grademax;
+                                if (empty($CFG->unlimitedgrades)) {
+                                    if (isset($item->grademax)) {
+                                        $inputparams['max'] = $item->grademax;
+                                    }
                                 }
                             }
 
