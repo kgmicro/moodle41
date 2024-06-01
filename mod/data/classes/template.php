@@ -489,6 +489,32 @@ class template {
     }
 
     /**
+     * Returns the ##usertripple## tag replacement for an entry.
+     *
+     * Name, phonetic name, and alternate on 3 separate lines
+     *
+     * @param stdClass $entry the entry object
+     * @param bool $canmanageentry if the current user can manage this entry
+     * @return string the tag replacement
+     */
+    protected function get_tag_usertripple_replacement(stdClass $entry, bool $canmanageentry): string {
+        return $entry->firstname . " " . $entry->lastname . "<br>" . $entry->firstnamephonetic . " " . $entry->lastnamephonetic . "<br>" . $entry->alternatename;
+    }
+
+    /**
+     * Returns the ##userfull## tag replacement for an entry.
+     *
+     * User full name with alternate name as plain text with no links
+     *
+     * @param stdClass $entry the entry object
+     * @param bool $canmanageentry if the current user can manage this entry
+     * @return string the tag replacement
+     */
+    protected function get_tag_userfull_replacement(stdClass $entry, bool $canmanageentry): string {
+        return fullname($entry, true);
+    }
+
+    /**
      * Returns the ##userpicture## tag replacement for an entry.
      *
      * @param stdClass $entry the entry object
