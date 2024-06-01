@@ -125,7 +125,7 @@ class filter_data extends moodle_text_filter {
             foreach ($contents as $content) {
                 $href_tag_begin = '<a class="data autolink dataid'.$content->dataid.'" title="'.s($content->content).'" '.
                                   'href="'.$CFG->wwwroot.'/mod/data/view.php?d='.$content->dataid.
-                                  '&amp;rid='.$content->recordid.'">';
+                                  '&amp;rid='.$content->recordid.'" target="_blank">';
                 $contentlist[] = new filterobject($content->content, $href_tag_begin, '</a>', false, true);
             }
 
