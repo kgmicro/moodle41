@@ -154,7 +154,7 @@ $order = (optional_param('order', $SESSION->dataprefs[$data->id]['order'], PARAM
 $SESSION->dataprefs[$data->id]['order'] = $order;     // Make it sticky
 
 
-$oldperpage = get_user_preferences('data_perpage_'.$data->id, 10);
+$oldperpage = get_user_preferences('data_perpage_'.$data->id, 100);
 $perpage = optional_param('perpage', $oldperpage, PARAM_INT);
 
 if ($perpage < 2) {
