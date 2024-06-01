@@ -120,8 +120,8 @@ function process_new_icon($context, $component, $filearea, $itemid, $originalfil
     }
 
     if (function_exists('imagecreatetruecolor')) {
-        $im1 = imagecreatetruecolor(100, 100);
-        $im2 = imagecreatetruecolor(35, 35);
+        $im1 = imagecreatetruecolor(512, 512);
+        $im2 = imagecreatetruecolor(512, 512);
         $im3 = imagecreatetruecolor(512, 512);
         if ($image->type != IMAGETYPE_JPEG and $imagefnc === 'imagepng') {
             if ($t) {
@@ -150,8 +150,8 @@ function process_new_icon($context, $component, $filearea, $itemid, $originalfil
             imagesavealpha($im3, true);
         }
     } else {
-        $im1 = imagecreate(100, 100);
-        $im2 = imagecreate(35, 35);
+        $im1 = imagecreate(512, 512);
+        $im2 = imagecreate(512, 512);
         $im3 = imagecreate(512, 512);
     }
 
@@ -164,8 +164,8 @@ function process_new_icon($context, $component, $filearea, $itemid, $originalfil
         $half = floor($image->height / 2.0);
     }
 
-    imagecopyresampled($im1, $im, 0, 0, $cx - $half, $cy - $half, 100, 100, $half * 2, $half * 2);
-    imagecopyresampled($im2, $im, 0, 0, $cx - $half, $cy - $half, 35, 35, $half * 2, $half * 2);
+    imagecopyresampled($im1, $im, 0, 0, $cx - $half, $cy - $half, 512, 512, $half * 2, $half * 2);
+    imagecopyresampled($im2, $im, 0, 0, $cx - $half, $cy - $half, 512, 512, $half * 2, $half * 2);
     imagecopyresampled($im3, $im, 0, 0, $cx - $half, $cy - $half, 512, 512, $half * 2, $half * 2);
 
     $fs = get_file_storage();
