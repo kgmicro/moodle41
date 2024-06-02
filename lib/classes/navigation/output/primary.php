@@ -138,13 +138,19 @@ class primary implements renderable, templatable {
         }
         // Gather all the avatar data to be displayed in the user menu.
         $usermenudata['avatardata'][] = [
-            'content' => $info->metadata['useravatar'],
+            //'content' => $info->metadata['useravatar'],
+            'content' => $info->metadata['userfullname'],
             'classes' => 'current'
         ];
         $usermenudata['userfullname'] = $info->metadata['realuserfullname'] ?? $info->metadata['userfullname'];
 
         // Logged in as someone else.
         if ($info->metadata['asotheruser']) {
+            $usermenudata['avatardata'] = [];
+            $usermenudata['avatardata'][] = [
+                'content' => $info->metadata['useravatar'],
+                'classes' => 'current'
+            ];
             $usermenudata['avatardata'][] = [
                 'content' => $info->metadata['realuseravatar'],
                 'classes' => 'realuser'
