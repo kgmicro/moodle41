@@ -377,7 +377,7 @@ class assign_submission_onlinetext extends assign_submission_plugin {
                                                              $onlinetextsubmission->submission,
                                                              $this->get_type(),
                                                              'onlinetext',
-                                                             'assignsubmission_onlinetext', true);
+                                                             'assignsubmission_onlinetext', false);
 
             // The actual submission text.
             $onlinetext = trim($onlinetextsubmission->onlinetext);
