@@ -120,7 +120,7 @@ class text_filter extends \core_filters\text_filter {
             foreach ($contents as $content) {
                 $hrefopen = '<a class="data autolink dataid' . $content->dataid . '" title="' . s($content->content) . '" ' .
                                   'href="' . $CFG->wwwroot . '/mod/data/view.php?d=' . $content->dataid .
-                                  '&amp;rid=' . $content->recordid . '">';
+                                  '&amp;rid=' . $content->recordid . '" target="_blank">';
                 $contentlist[] = new filter_object($content->content, $hrefopen, '</a>', false, true);
             }
 
